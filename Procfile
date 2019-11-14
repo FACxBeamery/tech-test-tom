@@ -1,1 +1,1 @@
-web: concurrently "npm server/server.js" "react-scripts start"
+web: npm start
