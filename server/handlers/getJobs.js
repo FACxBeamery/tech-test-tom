@@ -23,10 +23,15 @@ const getJobs = async (req, res, next) => {
 
     try {
         const jobsArray = await getGithubJobs(location)
-        const cleanJobsArray = cleanGithubResponse(jobsArray)
-        console.log(cleanJobsArray);
-        res.status(200).send(cleanJobsArray)
-        res.end()
+        if (jobsArray.length === 0) {
+            res.status(404).send("no jobs found")
+            res.end()
+        } else {
+            const cleanJobsArray = cleanGithubResponse(jobsArray)
+            console.log(cleanJobsArray);
+            res.status(200).send(cleanJobsArray)
+            res.end()
+        }
     } catch (error) {
         res.status(404).send("Couldn't do the get request to  github")
         res.end()

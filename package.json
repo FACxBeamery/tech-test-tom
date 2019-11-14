@@ -1,0 +1,23 @@
+{
+  "name": "tech-test-tom",
+  "version": "1.0.0",
+  "description": "This is my repository for the 'Tech Test' from indorse.io. This README will contain a brief overview of the web application, a link to its site, and instructions for running and testing it locally.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACxBeamery/tech-test-tom.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACxBeamery/tech-test-tom/issues"
+  },
+  "homepage": "https://github.com/FACxBeamery/tech-test-tom#readme",
+  "dependencies": {
+    "eslint-config-react-app": "^5.0.2",
+    "eslint-plugin-import": "^2.18.2"
+  }
+}
