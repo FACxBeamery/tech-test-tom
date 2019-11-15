@@ -36,7 +36,8 @@ The app has a score of 100 on the Lighthouse accessibility audit.
 
 ## Current issues 
 
-* More tests need to be written to improve the code coverage. 
-* The app fails to deploy to heroku. 
+* The app fails to deploy to netlify.
+* The design could be improved.
+* The app doesn't allow the user to specify what kind of job they are looking for.
 
 
