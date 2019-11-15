@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css';
-import WelcomePage from "./components/WelcomePage"
+import WelcomePage from "../welcomePage/WelcomePage"
 import { AppProvider } from "./AppContext"
 
 

@@ -5,7 +5,6 @@ const cleanGithubResponse = (jobsArray) => {
     // cleans each 'job' object sent through from github into a form suitable for the front-end
     return jobsArray.map(job => {
         const cleanedJob = {}
-
         cleanedJob.id = job.id
         cleanedJob.url = job.url
         cleanedJob.company = job.company
@@ -27,7 +26,6 @@ const getJobs = async (req, res, next) => {
             res.end()
         } else {
             const cleanJobsArray = cleanGithubResponse(jobsArray)
-            console.log(cleanJobsArray);
             res.status(200).send(cleanJobsArray)
             res.end()
         }

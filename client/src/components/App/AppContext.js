@@ -18,10 +18,8 @@ const reducer = (state, action) => {
             return { ...state, formValue: action.payload }
         case "updateCities":
             return { ...state, jobs: action.payload }
-        case "nextPage":
-            return { ...state, page: state.page + 1 }
-        case "previousPage":
-            return { ...state, page: state.page - 1 }
+        default:
+            return state
     }
 }
 

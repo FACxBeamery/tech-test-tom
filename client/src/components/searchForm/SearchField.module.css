@@ -24,7 +24,7 @@ input[type=submit] {
     display: flex;
     position: absolute;
     flex-direction: column;
-    max-height: 50vw;
+    max-height: 30vw;
     overflow-y: scroll;
     z-index: 2;
 }
@@ -80,7 +80,7 @@ label {
 }
 
 .search-button {
-    background-color: #4CAF50; /* Green */
+    background-color: rgb(76, 119, 175); 
     border: none;
     color: white;
     padding: 15px 32px;

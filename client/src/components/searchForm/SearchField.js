@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { AppContext } from "../../AppContext"
+import { AppContext } from "../App/AppContext"
 import getJobs from "../../utils/getJobs"
 import styles from "./SearchField.module.css"
 const cities = require("cities.json").filter(elem => ["US",
@@ -43,13 +43,13 @@ const SearchField = () => {
             clearSuggestions()
         }
     }
-
     const updateSuggestions = () => {
         dispatch({ type: "updateSuggestions", payload: getSuggestions(state.formValue) })
     }
-    React.useEffect(() => {
-        updateSuggestions()
-    }, [state.formValue])
+    // we don't want updateSuggestions to be a dependency so ignore eslint
+    // eslint-disable-next-line 
+    React.useEffect(() => updateSuggestions(), [state.formValue])
+
     const suggestionsToRender = (state.citySuggestions.length === 0) ? [] : state.citySuggestions.map((city) => {
         return (<button onClick={(event) =>
             onSuggestionClick(event, `${city.name}, ${city.country}`)
