@@ -26,7 +26,6 @@ const getJobs = async (req, res, next) => {
             res.end()
         } else {
             const cleanJobsArray = cleanGithubResponse(jobsArray)
-            console.log(cleanJobsArray);
             res.status(200).send(cleanJobsArray)
             res.end()
         }

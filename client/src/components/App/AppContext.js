@@ -18,6 +18,8 @@ const reducer = (state, action) => {
             return { ...state, formValue: action.payload }
         case "updateCities":
             return { ...state, jobs: action.payload }
+        default:
+            return state
     }
 }
 

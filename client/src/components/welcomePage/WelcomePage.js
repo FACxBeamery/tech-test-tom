@@ -1,6 +1,6 @@
 import React from "react"
-import JobList from "./JobList"
-import SearchField from "./searchForm/SearchField"
+import JobList from "../jobs/JobList"
+import SearchField from "../searchForm/SearchField"
 import styles from "./WelcomePage.module.css"
 const WelcomePage = () => {
     return (

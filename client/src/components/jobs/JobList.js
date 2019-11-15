@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { AppContext } from "../AppContext"
+import { AppContext } from "../App/AppContext"
 import JobCard from "./JobCard"
 import styles from "./JobList.module.css"
 const JobList = () => {
