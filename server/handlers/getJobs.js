@@ -19,7 +19,6 @@ const cleanGithubResponse = (jobsArray) => {
 }
 const getJobs = async (req, res, next) => {
     const location = req.query.location
-    console.log(location);
 
     try {
         const jobsArray = await getGithubJobs(location)
