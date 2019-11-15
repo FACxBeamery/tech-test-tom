@@ -4,10 +4,11 @@ const JobCard = ({ jobObject }) => {
 
     return (
         <div className={styles["job-card"]} >
-            < h1 > {jobObject.title}</h1 >
-            <h2>{jobObject.location}</h2>
-            <p>{jobObject.createdAt}</p>
+            <p className={styles["job-title"]} > {jobObject.title}</p>
+            <p className={styles["job-company"]}>{jobObject.company}</p>
+            <p className={styles["job-location"]}>{jobObject.location}</p>
             <a href={jobObject.url}>See more</a>
+            <p className={styles["job-date"]}>Job posted at {jobObject.created_at}</p>
         </div >
     )
 

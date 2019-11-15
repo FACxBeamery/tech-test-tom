@@ -2,7 +2,8 @@ import React, { useContext } from "react"
 import { AppContext } from "../../AppContext"
 import getJobs from "../../utils/getJobs"
 import styles from "./SearchField.module.css"
-const cities = require("cities.json").filter(elem => elem.country === 'GB')
+const cities = require("cities.json").filter(elem => ["US",
+    "GB", "CA"].includes(elem.country))
 
 const getSuggestions = value => {
     if (!value) { return "" }
@@ -63,22 +64,26 @@ const SearchField = () => {
         <div className={styles["search-form"]}>
             <form onSubmit={handleSubmission}>
                 <label htmlFor="search-form">Enter city here</label>
-                <input type="text"
-                    id="search-form"
-                    placeholder="Enter city here..."
-                    value={state.formValue}
-                    data-testid="text-form"
-                    onChange={(event) => {
-                        handleFormValue(event)
-                        updateSuggestions()
-
-                    }}
-                    required />
+                <div className={styles["search-bar"]}>
+                    <input type="text"
+                        id="search-form"
+                        placeholder="Enter city here..."
+                        value={state.formValue || ""}
+                        data-testid="text-form"
+                        autoComplete="off"
+                        onChange={(event) => {
+                            handleFormValue(event)
+                            updateSuggestions()
+                        }}
+                        required />
+                    <button className={styles["search-button"]} type="submit">Go!</button>
+                </div>
+                {/* <p>{state.jobs.length === 0 ? ("") : (`Jobs available in ${state.formValue}:`)}</p> */}
                 <div className={styles["autocomplete-items"]}>
                     {[suggestionsToRender]}
                 </div>
             </form>
-        </div>
+        </div >
     )
 }
 

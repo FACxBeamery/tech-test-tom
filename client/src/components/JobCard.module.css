@@ -8,3 +8,18 @@
     padding: 1rem;
     z-index: 1;
 }
+
+.job-title {
+    font-size: 2rem;
+}
+
+.job-date {
+    color: #555555;
+    font-style: italic;
+    font-size: 1rem;
+    text-align: right;
+}
+
+.job-company {
+    font-size: 1.5rem;
+}
