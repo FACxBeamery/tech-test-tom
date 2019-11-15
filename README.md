@@ -2,6 +2,10 @@
 
 This is my repository for the 'Tech Test' from indorse.io. This README will contain a brief overview of the web application, a link to its site, and instructions for running and testing it locally.
 
+## Dependencies: 
+
+The installation instructions assume you have Node, npm and git installed, as well as a basic understanding of the command line. 
+
 ## Tech Stack
 
 The app uses Node.js with an Express server on the back-end, and the front-end is written in React. Rather than prop drilling, I make use of the `useContext()` React hook to control the state. 
