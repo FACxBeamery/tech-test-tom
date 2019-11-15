@@ -1,6 +1,12 @@
 # tech-test-tom
 
-This is my repository for the 'Tech Test' from indorse.io. This README will contain a brief overview of the web application, a link to its site, and instructions for running and testing it locally. 
+This is my repository for the 'Tech Test' from indorse.io. This README will contain a brief overview of the web application, a link to its site, and instructions for running and testing it locally.
+
+## Tech Stack
+
+The app uses Node.js with an Express server on the back-end, and the front-end is written in React. Rather than prop drilling, I make use of the `useContext()` React hook to control the state. 
+
+The app calls the `jobs.github.com` API, which does not require any authentication.
 
 ## Installation instructions
 To install the app, please clone the reposity with `git clone` followed by the repository's URL. 
