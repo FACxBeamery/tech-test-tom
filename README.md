@@ -4,4 +4,4 @@ This is my repository for the 'Tech Test' from indorse.io. This README will cont
 
 To download the app, please clone the reposity with `git clone` followed by the repository's URL. 
 
-`cd` into the repository, and run ```npm start```. This will open the app in your browser. 
+`cd` into the repository, and run `npm i` to install the necessary dependencies. Once this is done, run ```npm start```. This will open the app in your browser. 
