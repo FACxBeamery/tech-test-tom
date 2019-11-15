@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+/* istanbul ignore file */ // <App/> is tested in App.test.js
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

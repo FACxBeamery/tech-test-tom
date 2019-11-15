@@ -5,7 +5,6 @@ const cleanGithubResponse = (jobsArray) => {
     // cleans each 'job' object sent through from github into a form suitable for the front-end
     return jobsArray.map(job => {
         const cleanedJob = {}
-
         cleanedJob.id = job.id
         cleanedJob.url = job.url
         cleanedJob.company = job.company

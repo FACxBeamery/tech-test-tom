@@ -1,7 +1,54 @@
 const axios = require("axios")
 const { getJobs, cleanGithubResponse } = require("./getJobs")
-diff = require("deep-diff").diff
-jest.mock("axios")
+const assert = require("assert");
+const express = require("express");
+const nock = require("nock");
+const supertest = require("supertest");
+const router = require("../router");
+const app = require("../server.js");
+
+
+describe("test the server's handling of a GET request", () => {
+
+
+    const mockJob = [{
+        "id": "2a6eedca-1cb3-42a6-b469-78b43750366b",
+        "type": "Full Time",
+        "url": "https://jobs.github.com/positions/2a6eedca-1cb3-42a6-b469-78b43750366b",
+        "created_at": "Wed Nov 13 11:53:54 UTC 2019",
+        "company": "Blackbox Company (UK) Ltd.",
+        "company_url": "https://www.blackbox-co.com",
+        "location": "Crowthorne",
+        "title": "Front-End Developer",
+        "description": "<h2>Job Description</h2>\n<p>Blackbox is looking for a strong front-end developer to join our UK dev team, to help build the next generation of information control systems for the ...",
+        "how_to_apply": "<p><a href=\"mailto:jobs@blackbox-co.com\">jobs@blackbox-co.com</a></p>\n",
+        "company_logo": "https://jobs.github.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBa2gzIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--482f93948fc8f680f874a7a28aaaa366b8a428e3/bbx-logo-black.png"
+    }];
+
+
+    it("sends a response of json format", done => {
+
+        nock("https://jobs.github.com")
+            .get("/positions.json")
+            .query(true)
+            .reply(200, mockJob);
+
+        return supertest(app)
+            .get("/jobs")
+            .query({ location: "madagascar" })
+            .expect(200)
+            .end(function (err, res) {
+                expect(res.body).toEqual(cleanGithubResponse(mockJob));
+                if (err) { return done(err); }
+                done();
+
+            });
+
+    });
+});
+
+
+
 
 test("cleanGithubResponse should return clean data", () => {
     const input = [{
@@ -31,6 +78,7 @@ test("cleanGithubResponse should return clean data", () => {
     ]
 
     const actual = cleanGithubResponse(input)
-    //  
+    //  get rid of whitespace to avoid false-negatives due to string formatting.
     expect(JSON.stringify(actual).replace(/\s/g, '')).toEqual(JSON.stringify(expected).replace(/\s/g, ''))
 })
+

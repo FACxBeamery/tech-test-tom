@@ -3,7 +3,7 @@ const formidable = require("express-formidable")
 const router = require("./router")
 
 const app = express()
-const port = process.env.port || 3001
+
 app.use((req, res, next) => {
     res.setHeader(
         "Access-Control-Allow-Headers",
@@ -19,6 +19,4 @@ app.use((req, res, next) => {
 });
 app.use(router)
 
-app.listen(port, () => {
-    console.log(`Server listening on port ${port} and is ready to accept requests!`);
-})
+module.exports = app

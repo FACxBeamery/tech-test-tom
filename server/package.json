@@ -7,7 +7,7 @@
     "license": "ISC",
     "main": "index.js",
     "scripts": {
-        "start": "nodemon server.js",
+        "start": "nodemon index.js",
         "test": "jest --watch"
     },
     "dependencies": {
@@ -20,5 +20,9 @@
         "pino": "^5.13.6",
         "pino-http": "^4.3.0",
         "pino-pretty": "^3.3.0"
+    },
+    "devDependencies": {
+        "nock": "^11.7.0",
+        "supertest": "^4.0.2"
     }
 }

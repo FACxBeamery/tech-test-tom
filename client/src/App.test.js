@@ -21,11 +21,13 @@ global.fetch = jest
     .mockImplementation(() =>
         Promise.resolve({ text: () => Promise.resolve(mockResponse) })
     );
+
+
+
 test("Dropdown working", () => {
     const { getByText, getByTestId, queryByText, queryAllByTestId } = render(
         <App />
     );
-
     const textForm = getByTestId("text-form")
     fireEvent.change(textForm, { target: { value: "London" } });
 
@@ -36,5 +38,22 @@ test("Dropdown working", () => {
 
     const lastJob = setTimeout(() => getByText("paddle.com"), 1000) // last job showing
 
+    fireEvent.change(textForm, { target: { value: "Manchester" } }) // search for manchester
+
 })
 
+test("Go button working", () => {
+    const { getByText, getByTestId, queryByText, queryAllByTestId } = render(
+        <App />
+    );
+    const textForm = getByTestId("text-form")
+    fireEvent.change(textForm, { target: { value: "London" } })
+    const goButton = getByText("Go!")
+
+    fireEvent.click(goButton)
+
+    const firstJob = setTimeout(() => getByText("Blackbox"), 1000) // check first job is showing after waiting for it to render
+
+    const lastJob = setTimeout(() => getByText("paddle.com"), 1000) // last job showing
+
+})
