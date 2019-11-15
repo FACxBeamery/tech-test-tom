@@ -14,8 +14,9 @@ To install the app, please clone the reposity with `git clone` followed by the r
 `cd` into the repository, and run `npm i` to install the necessary dependencies. Once this is done, run ```npm start```. This will open the app in your browser. 
 
 
-## Testing instructions
-The app exists in two main directories: `client` (the frontend) and `server` (the backend). `cd` into these directories and run `npm test` to run the written tests.
+## Testing
+The app exists in two main directories: `client` (the frontend) and `server` (the backend). 
+To test the front-end, `cd` into `client` and run the command `npm test -- --coverage --watchAll`. The front-end has test-coverage of >94%. 
 
 ## Functionality
 
