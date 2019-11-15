@@ -18,6 +18,8 @@ To install the app, please clone the reposity with `git clone` followed by the r
 The app exists in two main directories: `client` (the frontend) and `server` (the backend). 
 To test the front-end, `cd` into `client` and run the command `npm test -- --coverage --watchAll`. The front-end has test-coverage of >94%. 
 
+Run the same command in `server` to view the test coverage on the back-end. Currently the test coverage here is >85%. 
+
 ## Functionality
 
 The web-app is a job-search engine. Users can enter their city to discover jobs in that area that are listed on jobs.github.com.
